@@ -71,9 +71,12 @@ input:checked ~ .bayan__title {
 }
 
 .bayan__img {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    /* display: none; */
     align-self: center;
-    padding: 0.8em;
+    /* padding: 0; */
+    transition: 0.3s;
 }
 
 .svg {
@@ -99,9 +102,10 @@ input:checked ~ .bayan__title {
     }
 
     input:checked ~ .bayan__img {
-        padding: 0; 
+        padding: 0.8em 0; 
         display: flex;
         justify-content: center;
+        height: auto;
     }
 
     img {
