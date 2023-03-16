@@ -1,16 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.icon {
+    margin-top: 1em;
+    height: 3em;
+    width: 3em;
+}
+
 body {
     background-color: bisque;
 }
 
 .bayan {
-    width: 60%; 
+    width: 50%; 
     margin: auto;
 }
 
 .bayan__item {
     display: flex;
+    margin-top: 0.5em;
+    align-items: center;
+    border: 2px solid beige;
+    background-color: #037e94;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.bayan__item:hover {
+    background-color: #036172;
+    transition: 0.3s;
+}
+
+.bayan__title{
+    display: flex;
     justify-content: center;
-    border-radius: 10%;
-    border: 2px;
-    border-color: beige;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    height: 2.6em;
+}
+
+.bayan__name {
+    line-height: 2.6em;
+    position: absolute;
+    width: 50%;
+    cursor: pointer;
+    
+}
+
+input {
+    appearance: none;
+}
+
+input:checked ~ .bayan__img {
+    display: flex;
+}
+
+input:checked ~ .bayan__title {
+    background-color: #036172;
+}
+
+.bayan__img {
+    display: none;
+    align-self: center;
+    padding: 0.8em;
+}
+
+.svg {
+    padding-right: 0.6em;
+    margin-left: auto;
+    height: 1em;
+    width: 1em;
+}
+
+@media (min-width: 320px) {
+    .bayan {
+        width: 80%;
+    }
+
+    /* Определение нужной иконки в HEADER */
+
+    .pc, .tb {
+        display: none;
+    }
+
+    .ph {
+        display: block;
+    }
+
+    input:checked ~ .bayan__img {
+        padding: 0; 
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        height: 90%;
+        width: 90%;
+    }
+}
+
+@media (min-width: 820px) {
+
+    .pc, .ph {
+        display: none;
+    }
+
+    .tb {
+        display: block;
+    }
+}
+
+@media (min-width: 1920px) {
+    .ph, .tb {
+        display: none;
+    }
+
+    .pc {
+        display: block;
+    }
 }
